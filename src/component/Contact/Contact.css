@@ -1,0 +1,332 @@
+.contact-section {
+  background-color: #0f051c; /* A slightly darker background, consistent with Experience/Skills */
+  color: #ffffff;
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.contact-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-section .section-title {
+  font-size: 3em;
+  margin-bottom: 60px;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-section .section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #6a1b9a; /* Purple line */
+  border-radius: 2px;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form {
+  background-color: #1a0a2e; /* Dark purple/blue for the form background */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  width: 100%; /* Take full width of its container */
+  max-width: 600px; /* Limit form width for better readability */
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.1em;
+  color: #e0e0e0;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #3a1c58; /* Darker purple border */
+  border-radius: 10px; /* Rounded corners for inputs */
+  background-color: #2a1142; /* Slightly lighter dark background for input fields */
+  color: #ffffff;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #a0a0a0;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #6a1b9a; /* Purple border on focus */
+  box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.3); /* Subtle purple glow on focus */
+}
+
+.form-textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 120px;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 15px 25px;
+  background-color: #6a1b9a; /* Purple submit button */
+  color: #ffffff;
+  border: none;
+  border-radius: 10px; /* Rounded corners for button */
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #8c42b7; /* Lighter purple on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button:disabled {
+  background-color: #4a2d6b; /* Greyed out when disabled */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* --- Success Modal Styles --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background-color: #1a0a2e; /* Dark background for modal */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: relative;
+  max-width: 450px;
+  width: 90%;
+  animation: slideIn 0.4s ease-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #ffffff;
+  font-size: 2em;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #6a1b9a;
+}
+
+.modal-icon {
+  font-size: 4em;
+  color: #4CAF50; /* Green for success */
+  margin-bottom: 20px;
+  animation: bounceIn 0.6s ease-out;
+}
+
+.modal-content h3 {
+  font-size: 2em;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 1.1em;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+.modal-ok-button {
+  padding: 12px 30px;
+  background-color: #6a1b9a; /* Purple button */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-ok-button:hover {
+  background-color: #8c42b7;
+  transform: translateY(-2px);
+}
+
+/* --- Error Toast Styles --- */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d32f2f; /* Red for error */
+  color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001; /* Above modal if both appear (unlikely) */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  animation: slideInFromBottom 0.4s ease-out;
+}
+
+.toast-notification p {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.toast-close {
+  color: #ffffff;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.toast-close:hover {
+  opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideInFromBottom {
+  from { transform: translateX(-50%) translateY(100%); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 30px;
+  }
+  .contact-section .section-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  .contact-form {
+    padding: 30px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-input,
+  .form-textarea,
+  .submit-button {
+    padding: 12px;
+    font-size: 1.1em;
+  }
+  .modal-content {
+    padding: 30px;
+  }
+  .modal-content h3 {
+    font-size: 1.8em;
+  }
+  .modal-content p {
+    font-size: 1em;
+  }
+  .modal-ok-button {
+    padding: 10px 25px;
+    font-size: 1em;
+  }
+  .toast-notification {
+    bottom: 20px;
+    padding: 12px 20px;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px 20px;
+  }
+  .contact-section .section-title {
+    font-size: 2em;
+  }
+  .contact-form {
+    padding: 20px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-input,
+  .form-textarea,
+  .submit-button {
+    padding: 10px;
+    font-size: 1em;
+  }
+  .modal-content {
+    padding: 25px;
+  }
+  .modal-content h3 {
+    font-size: 1.5em;
+  }
+  .modal-content p {
+    font-size: 0.9em;
+  }
+  .modal-ok-button {
+    padding: 8px 20px;
+    font-size: 0.9em;
+  }
+  .toast-notification {
+    bottom: 15px;
+    padding: 10px 15px;
+    font-size: 0.85em;
+  }
+}

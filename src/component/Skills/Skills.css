@@ -1,0 +1,154 @@
+.skills-section {
+  background-color: #0f051c; /* Slightly darker background, consistent with other sections */
+  color: #ffffff;
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.skills-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-section .section-title {
+  font-size: 3em;
+  margin-bottom: 60px;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+/* Reusing the title underline from previous sections */
+.skills-section .section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #6a1b9a; /* Purple line under title */
+  border-radius: 2px;
+}
+
+.skills-cards-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+  gap: 40px; /* Space between cards */
+}
+
+.skill-card {
+  background-color: #1a0a2e; /* Dark purple/blue, consistent with other cards */
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  flex: 1; /* Allows cards to grow and shrink */
+  min-width: 300px; /* Minimum width before wrapping */
+  max-width: 45%; /* Max width for two columns */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  border: 1px solid transparent; /* For border animation */
+}
+
+.skill-card:hover {
+  transform: translateY(-10px); /* Lifts the card on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  border-color: #6a1b9a; /* Highlight border on hover */
+}
+
+.skill-card-title {
+  font-size: 2em;
+  color: #6a1b9a; /* Purple for card titles */
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.skill-card-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: #6a1b9a;
+  border-radius: 1.5px;
+}
+
+.skill-list {
+  list-style: none; /* Remove default bullet points */
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Auto-fit skills in columns */
+  gap: 15px 10px; /* Gap between skill items */
+}
+
+.skill-item {
+  position: relative;
+  padding-left: 25px; /* Space for custom icon/bullet */
+  font-size: 1.1em;
+  color: #e0e0e0;
+}
+
+.skill-item::before {
+  content: '\2713'; /* Unicode checkmark */
+  color: #3f51b5; /* A blueish checkmark, or #6a1b9a for purple */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .skills-cards-wrapper {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center; /* Center stacked cards */
+  }
+  .skill-card {
+    max-width: 80%; /* Adjust max width when stacked */
+    width: 100%; /* Take full width of its container */
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 60px 30px;
+  }
+  .skills-section .section-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  .skill-card {
+    padding: 30px;
+  }
+  .skill-card-title {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 40px 20px;
+  }
+  .skills-section .section-title {
+    font-size: 2em;
+  }
+  .skill-card {
+    padding: 25px;
+    min-width: unset; /* Remove min-width to allow more flexibility */
+    max-width: 100%;
+  }
+  .skill-list {
+    grid-template-columns: 1fr; /* Stack skills vertically if only one column fits */
+  }
+  .skill-item {
+    font-size: 1em;
+  }
+}
