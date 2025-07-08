@@ -26,10 +26,10 @@ const projectsData = [
   {
     id: 3,
     image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8f297256512097.59b16301a9a93.jpg', // Replace with your AI-generated image URL
-    title: 'Blog CMS',
+    title: 'My Portfolio',
     description:
       'A custom Content Management System for blogging, featuring an admin panel, rich text editor, category management, and robust security.',
-    skills: ['PHP', 'Laravel', 'MySQL', 'Bootstrap'],
+    skills: ['JavaScript', 'Tailwind', 'React Js'],
     githubLink: 'https://github.com/muneeb-sajid/My_Portfolio/',
     liveLink: 'https://github.com/muneeb-sajid/My_Portfolio/',
   },
