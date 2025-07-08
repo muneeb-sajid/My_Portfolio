@@ -25,13 +25,13 @@ const projectsData = [
   },
   {
     id: 3,
-    image: 'https://picsum.photos/id/150/800/600', // Replace with your AI-generated image URL
+    image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8f297256512097.59b16301a9a93.jpg', // Replace with your AI-generated image URL
     title: 'Blog CMS',
     description:
       'A custom Content Management System for blogging, featuring an admin panel, rich text editor, category management, and robust security.',
     skills: ['PHP', 'Laravel', 'MySQL', 'Bootstrap'],
-    githubLink: 'https://github.com/your-username/blog-cms',
-    liveLink: 'https://blog-cms-demo.netlify.app',
+    githubLink: 'https://github.com/muneeb-sajid/My_Portfolio/',
+    liveLink: 'https://github.com/muneeb-sajid/My_Portfolio/',
   },
 ];
 
