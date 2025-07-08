@@ -31,7 +31,7 @@ const projectsData = [
       'A custom Content Management System for blogging, featuring an admin panel, rich text editor, category management, and robust security.',
     skills: ['JavaScript', 'Tailwind', 'React Js'],
     githubLink: 'https://github.com/muneeb-sajid/My_Portfolio/',
-    liveLink: 'https://github.com/muneeb-sajid/My_Portfolio/',
+    liveLink: 'https://my-portfolio-kch5hh0l0-muneeb-sajids-projects.vercel.app/',
   },
 ];
 
