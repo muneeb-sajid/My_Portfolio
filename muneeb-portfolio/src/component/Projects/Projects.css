@@ -1,0 +1,241 @@
+.projects-section {
+  background-color: #1a0a2e; /* Dark background, consistent */
+  color: #ffffff;
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.projects-section .container {
+  max-width: 1200px; /* Standard max width */
+  margin: 0 auto;
+}
+
+.projects-section .section-title {
+  font-size: 3em;
+  margin-bottom: 60px;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.projects-section .section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #6a1b9a; /* Purple line */
+  border-radius: 2px;
+}
+
+/* --- NEW GRID LAYOUT FOR PROJECTS --- */
+.projects-grid {
+  display: grid;
+  /* Auto-fit creates columns that are at least 320px wide, up to 1 fraction unit */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px; /* Space between cards */
+  justify-content: center; /* Center the grid items if they don't fill the row */
+  align-items: stretch; /* Make cards of equal height */
+}
+
+.project-card {
+  background-color: #0f051c; /* Slightly darker card background */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Content stacks vertically within the card */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  border: 1px solid transparent;
+  width: auto; /* Let grid handle width */
+  margin-bottom: 0; /* Remove bottom margin specific to timeline */
+  position: relative; /* Keep for potential future enhancements */
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Lifts the card */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  border-color: #6a1b9a; /* Highlight border on hover */
+}
+
+/* Remove timeline dots and connecting lines */
+.projects-grid::before,
+.project-card::after {
+  content: none; /* Crucial: removes the timeline and dot pseudo-elements */
+}
+
+.project-image-container {
+  width: 100%;
+  height: 200px; /* Optimal height for horizontal cards */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a1142;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 25px; /* Standard padding */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-title {
+  font-size: 1.8em; /* Slightly larger title again */
+  color: #6a1b9a;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1em; /* Standard description font */
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Ensures description takes available space */
+}
+
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Good spacing for skill boxes */
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.skill-box {
+  background-color: #3a1c58;
+  color: #ffffff;
+  padding: 8px 15px; /* Standard padding for skill boxes */
+  border-radius: 8px;
+  font-size: 0.95em;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.skill-box:hover {
+  background-color: #6a1b9a;
+}
+
+/* Styles for Circular Icons (retained) */
+.project-links {
+  margin-top: auto; /* Pushes links to the bottom */
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px; /* Space between icons */
+}
+
+.project-icon-link {
+  width: 45px; /* Standard diameter for icons */
+  height: 45px; /* Standard diameter for icons */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.3em; /* Standard icon size */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-icon-link:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.github-icon {
+  background-color: #333;
+}
+
+.github-icon:hover {
+  background-color: #555;
+}
+
+.live-demo-icon {
+  background-color: #6a1b9a;
+}
+
+.live-demo-icon:hover {
+  background-color: #8c42b7;
+}
+
+
+/* Responsive adjustments for the horizontal grid */
+@media (max-width: 992px) {
+  .projects-section {
+    padding: 60px 30px;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min width for 2 columns */
+    gap: 30px;
+  }
+  .project-image-container {
+    height: 180px;
+  }
+  .project-content {
+    padding: 20px;
+  }
+  .project-title {
+    font-size: 1.6em;
+  }
+  .project-description {
+    font-size: 0.95em;
+  }
+  .skill-box {
+    font-size: 0.9em;
+    padding: 7px 12px;
+  }
+  .project-icon-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-section {
+    padding: 40px 20px;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr; /* Stack into a single column */
+    gap: 30px;
+  }
+  .project-image-container {
+    height: 160px;
+  }
+  .project-content {
+    padding: 20px;
+  }
+  .project-title {
+    font-size: 1.5em;
+  }
+  .project-description {
+    font-size: 0.9em;
+  }
+  .skill-box {
+    font-size: 0.85em;
+    padding: 6px 10px;
+  }
+  .project-icon-link {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1em;
+  }
+}
